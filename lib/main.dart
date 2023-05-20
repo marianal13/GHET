@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'pages/home.dart';
+import 'pages/grocery.dart';
+import 'pages/favorite.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,17 +36,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int sIndex = 0;
 
   List<Widget> pages = <Widget>[
-    HomePage(
-      const Text(
-        'Home',
-      )
-    ),
-    FavoritePage(
-
-    ),
-    GroceryPage(
-
-    ),
+    HomePage(title:'Home Paage'),
+    FavoritePage(title: 'Favorite Page'),
+    GroceryPage(title: 'Grocery Page',),
   ];
 
   @override
@@ -198,31 +193,4 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class HomePage extends StatelessWidget {
-  HomePage(Text text);
 
-  @override
-  Widget build(BuildContext context){
-    return const Center(
-      child: Text('Home Page'),
-    );
-  }
-}
-
-class FavoritePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context){
-    return const Center(
-      child: Text('Favorite Page'),
-    );
-  }
-}
-
-class GroceryPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context){
-    return const Center(
-      child: Text('Grocery Page'),
-    );
-  }
-}
